@@ -1,11 +1,11 @@
 """
-This application splits total bill.
+This application splits total bill and calculates tip.
 """
 
 from logo import logo
 print(logo)
 
-print("This application splits bill and can also be used to calculate tips.\n")
+print("This application splits bill and can also be used to calculates tip.\n")
 
 TIP = 0
 
