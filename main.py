@@ -1,15 +1,29 @@
-#If the bill was $150.00, split between 5 people, with 12% tip. 
-#Each person should pay (150.00 / 5) * 1.12 = 33.6
-#Format the result to 2 decimal places = 33.60
-#Tip: You might need to do some research in Google to figure out how to do this.
-
 """
-This application calculates tip and assist in spliting bills.
+This application splits total bill.
 """
 
 from logo import logo
 print(logo)
 
+print("This application splits bill and can also be used to calculate tips.\n")
 
+TIP = 0
 
+# Inputs
+amount = float(input("How much is your bill?\n"))
+tip_request = input('Do you want to tip? Yes or No\n').title()
+
+# Continue depending on the tip request response
+if tip_request == 'Yes':
+    TIP = int(input("How much tip percentage do you want to add? e.g. 5, 10 or 15 \n"))
+elif tip_request == 'No':
+    print('No tip')
+else:
+    print('Invalid input')
+
+calc_tip = (amount * (TIP / 100))
+print(f"{calc_tip:.2f}")
+bill = amount + calc_tip
+
+print(bill)
 
