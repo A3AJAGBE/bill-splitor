@@ -44,25 +44,24 @@ def app_func():
             # Continue depending on the tip request response
             if tip_request == 'Yes':
                 try:
-                    TIP = int(input("What percentage of tip to add? e.g. 5, 10 or 15 \n"))
+                    tip = int(input("What percentage of tip to add? e.g. 5, 10 or 15 \n"))
                 except ValueError:
                     print("Only integers allowed. Try Again!!!\n")
                     app_func()
             elif tip_request == 'No':
-                TIP = 0
+                tip = 0
             else:
                 print('Invalid input.\n')
                 app_func()
 
             # Making sure tip is not negative number
-            if TIP < 0:
+            if tip < 0:
                 print('That is a negative number, not allowed.\n')
                 app_func()
             else:
-                # Complete the first calculation
-                calc_tip = amount * (TIP / 100)
+                calc_tip = amount * (tip / 100)
                 bill = amount + calc_tip
-                print(f"\nUpdated Information\nInitial bill of {amount:.2f} with {TIP}% = {bill:.2f}")
+                print(f"\nUpdated Information\nInitial bill of {amount:.2f} with {tip}% = {bill:.2f}")
 
                 split_request = input('(Yes or No): Do you want to split the bill? ').capitalize()
 
@@ -77,5 +76,7 @@ def app_func():
                     app_func()
 
                 print("Thanks for using the application.")
+
+
 app_func()
 
